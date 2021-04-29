@@ -1,0 +1,6 @@
+{
+    "python.analysis.disabled": [
+        "Python(unresolved-import)"
+    ],
+    "python.pythonPath": "C:\\Users\\Marcelo Simas\\anaconda3\\envs\\myenv\\python.exe"
+}
