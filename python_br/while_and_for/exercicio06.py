@@ -1,10 +1,4 @@
-import re
-string = list(''.join(re.split('["!@#$%&*()-_+=´`~^?/°.,><;:¹²³£¢¬\|°]', ''.join(input('String: ').split()))))
-if string == list(reversed((string))):
-    print('É um palindromo')
-    print(string)
-    print(list(reversed(string)))
-else:
-    print('Não é um palindromo')
-    print(string)
-    print(list(reversed(string)))
+for i in range(20):
+    print(i + 1)
+for i in range(20):
+    print(i + 1, end=', ')

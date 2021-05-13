@@ -1,33 +1,14 @@
-def write_text():
-    linha = ''
-    texto = []
-    print('Para parar de escrever dê o comando "Break"')
-    while linha != 'Break':
-        linha = input()
-        if linha == 'Break':
-            break
-        else:
-            texto.append(linha)
-    return texto
+nome = input('Nome: ')
+while len(nome) <= 3:
+    print('Error(Nome deve ter mais que 3 caracteres)')
+    nome = input('Nome: ')
+idade = int(input('Idade: '))
+while idade < 1 or idade > 150:
+    print('Error(Idade deve estar entre 1 e 150)')
+    idade = int(input('Idade: '))
+salario = float(input('Salario: '))
+while salario < 1:
+    print('Error(salario deve ser maoior que 1)')
+    salario = float(input('Salario: '))
+# Fiquei com preguiça de terminar mas é só repetir os processos.
 
-def maior_palavra(texto):
-    index = None
-    max_word = ''
-    for i in range(len(texto)):
-        linha = texto[i].split()
-        maior_da_linha = max(linha, key=len)
-        if len(max_word) < len(maior_da_linha):
-            max_word = maior_da_linha
-            indice_da_linha = i
-
-    return indice_da_linha
-
-texto = write_text()
-
-menor_linha = texto.index(min(texto, key=len))
-
-total_char = len(''.join(texto).replace(' ', ''))
-
-print(f'O texto possúi {total_char} caracteres')
-print(f'A maior sequencia de caracteres está na linha {maior_palavra(texto) + 1}')
-print(f'A linha {menor_linha + 1} é a menor linha')

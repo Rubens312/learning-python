@@ -1,10 +1,10 @@
-import re
-def number_of_words(sentence):
-    sentence_splited = sentence.split()
-    sentence_splited = ' '.join(sentence_splited)
-    sentence_splited = re.split('[,."  "; ]', sentence_splited)    
+A = 80000
+B = 200000
+i = 0
 
-    return len(sentence_splited)
+while B > A:
+    i += 1
+    A = A + A*3/100
+    B = B + B*1.5/100
 
-sentence = input('Frase: ')
-print(f'A frase inserida possúi {number_of_words(sentence)} palavras')
+print(f'{A}, {B}, {i}anos')

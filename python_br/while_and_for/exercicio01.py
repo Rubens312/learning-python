@@ -1,12 +1,14 @@
-def incidencia_da_letra(texto, char):
-    count = 0
-    for letra in texto:
-        if letra == char:
-            count += 1
-    return count
+numero = None
+while True:
+    try:
+        numero = float(input('numero de 1 à 10: '))
+    except ValueError:
+        print('Valor invalido')
+    if numero != None:
+        if 1 <= numero <= 10:
+            print(numero)
+            break
+        else:
+            print('Numero invalido')
 
-texto = '''iufbwuifb hfweh89w 98huwecbec wehiubflLAB IHVIUBVIUBEUI SNFIJJOI rheubviuwhe jgiuee ijowençsdfh heirhieuuiweg hvgeuiwehfi egh gwiehf sgvwghweghivhiuwef weheghwih vwe çw
-g weghweghweio hwegw eoghwegh doghẃefçwg wegw efuigi wef
-f wghw8ghw gw8ghwegwhwey hwfh9 wfywa8cf efc
-efhuifhw8 af8 awywyawyw8efiowdghiuwgehlasfiahgieygrhgiusf iughiuergiuduwe fihefiuhfiashhça fhfihwihsdjbvwiuf sufewuibvsduihf'''
-print(incidencia_da_letra(texto, '9'))
+    
