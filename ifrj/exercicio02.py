@@ -10,7 +10,7 @@ def maior_incidencia(texto, char):
                 print(f'O caracter apareceu no indicie {j + 1} da linha {i + 1}')
         if count > official_count:
             official_count = count
-            resultado = i
+            resultado = i + 1
     
     print(f'A maior incidencia do caracter aconteceu na linha {resultado}')
 
@@ -21,7 +21,7 @@ wiuwefuibewguwe g
 wefowifnwoegjowehgweçwe weihweifhiwefw
 efniwengiwegn hwegçwhçwf'''
             
-maior_incidencia(texto, 'a')
+maior_incidencia(texto, 'w')
 
 
 

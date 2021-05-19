@@ -2,7 +2,7 @@ def write_text():
     linha = ''
     texto = []
     print('Para parar de escrever dê o comando "Break"')
-    while linha != 'Break':
+    while True:
         linha = input()
         if linha == 'Break':
             break
