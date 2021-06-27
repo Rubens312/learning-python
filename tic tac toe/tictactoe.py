@@ -6,21 +6,35 @@ def print_board(board):
         print()
     print()
 
+def tie_test(board):
+    test = False
+    for line in board:
+        for position in line:
+            if position == '_':
+                test = True
+                break
+    return test
+
+
 def play_game(board):
     while True:
         print_board(board)
         line = int(input('Selecione uma linha: '))
         column = int(input('Selecione uma coluna: '))
-        board[line + 1].insert(column + 1, 'X')
-        if board[line] == ['X', 'X','X'] or (board[0][column] == 'X' and board[1][column] == 'X' and board[2][column] == 'X') or (board[0][0] == 'X' and board[1][1] == 'X' and board[2][2] == 'X') or (board[0][2] == 'X' and board[1][1] == 'X' and board[2][0] == 'X'):
+        board[line - 1].insert(column - 1, 'X')
+        if board[line - 1] == ['X', 'X','X'] or (board[0][column] == 'X' and board[1][column] == 'X' and board[2][column] == 'X') or (board[0][0] == 'X' and board[1][1] == 'X' and board[2][2] == 'X') or (board[0][2] == 'X' and board[1][1] == 'X' and board[2][0] == 'X'):
             print('X venceu')
             break
         else:
-            print_board(board)
-            line = int(input('Selecione uma linha: '))
-            column = int(input('Selecione uma coluna: '))
-            board[line + 1].insert(column + 1, 'O')
-            if board[line] == ['O', 'O','O'] or (board[0][column] == 'O' and board[1][column] == 'O' and board[2][column] == 'O') or (board[0][0] == 'O' and board[1][1] == 'O' and board[2][2] == 'O') or (board[0][2] == 'O' and board[1][1] == 'O' and board[2][0] == 'O'):
-                print('O venceu')
+            if tie_test:
+                print_board(board)
+                line = int(input('Selecione uma linha: '))
+                column = int(input('Selecione uma coluna: '))
+                board[line - 1].insert(column - 1, 'O')
+                if board[line - 1] == ['O', 'O','O'] or (board[0][column] == 'O' and board[1][column] == 'O' and board[2][column] == 'O') or (board[0][0] == 'O' and board[1][1] == 'O' and board[2][2] == 'O') or (board[0][2] == 'O' and board[1][1] == 'O' and board[2][0] == 'O'):
+                    print('O venceu')
+                    break
+            else:
+                print('Velha')
                 break        
 play_game(board)
